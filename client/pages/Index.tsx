@@ -494,7 +494,7 @@ export default function Index() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 lg:grid-cols-1 gap-16">
+            <div className="grid grid-cols-1 lg:grid-cols-1 gap-16">
               {/* Design Tools */}
               <div>
                 <div className="flex items-center space-x-3 mb-8">
@@ -504,7 +504,7 @@ export default function Index() {
                   <h3 className="text-2xl font-bold">Design Tools</h3>
                 </div>
 
-                <div className="grid grid-cols-2 gap-4">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
                   {designTools.map((tool, index) => {
                     const Icon = tool.icon;
                     return (
@@ -541,8 +541,6 @@ export default function Index() {
                     <Badge variant="secondary" className="bg-brand-50 text-brand-600 border-brand-200">
                       Jira
                     </Badge>
-                  </div>
-                  <div className="flex flex-wrap gap-2">
                     <Badge variant="secondary" className="bg-electric/10 text-electric border-electric/20">
                       Canva
                     </Badge>
@@ -556,6 +554,7 @@ export default function Index() {
                       Framer
                     </Badge>
                   </div>
+                
                 </div>
               </div>
 
@@ -568,7 +567,7 @@ export default function Index() {
                   <h3 className="text-2xl font-bold">Core Skills</h3>
                 </div>
 
-                <div className="grid grid-cols-2 lg:grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-4">
                   {coreSkills.map((skill, index) => {
                     const Icon = skill.icon;
                     return (
