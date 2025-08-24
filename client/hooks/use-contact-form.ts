@@ -36,7 +36,7 @@ export function useContactForm() {
 
   const validateField = (field: keyof ContactFormData, value: string) => {
     try {
-      contactFormSchema.pick({ [field]: true }).parse({ [field]: value });
+      z.object({ [field]: contactFormSchema.shape[field] }).parse({ [field]: value });
       setErrors(prev => ({ ...prev, [field]: undefined }));
       return true;
     } catch (error) {
