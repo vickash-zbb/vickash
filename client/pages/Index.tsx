@@ -82,7 +82,7 @@ export default function Index() {
       id: 2,
       title: "web application landing page",
       category: "web",
-      image: "/client/asset/leadstitch.png", 
+      image: "client/asset/leadstitch.png", 
       description: "Modern dashboard interface for data analytics platform with improved user flow.",
       tools: ["Figma", "FigJam", "Maze"],
       url:"https://d3cdob3hh5ynfu.cloudfront.net/",
