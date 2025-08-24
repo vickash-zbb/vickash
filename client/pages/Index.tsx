@@ -72,7 +72,7 @@ export default function Index() {
       id: 1,
       title: "Tharunam",
       category: "Website",
-      image: "client/asset/tharunam.png",
+      image: "/client/asset/tharunam.png",
       description: "Complete mobile shopping experience with intuitive navigation and seamless checkout process.",
       tools: ["Figma", "Photoshop"],
       url : "https://tharunamattire.com",
