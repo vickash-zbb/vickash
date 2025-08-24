@@ -283,7 +283,7 @@ export default function About() {
               <div className="relative">
                 <div className="w-full max-w-md mx-auto">
                   <img 
-                    src="/client/asset/vickash profile.png" 
+                    src="https://cdn.builder.io/api/v1/image/assets%2F0c313c2d09f34b648b6967b58f4f7809%2F295d4c0c397a46ab894b3a291cd53fa3" 
                     alt="Vickash Shivan - UI/UX Designer" 
                     className="w-full rounded-2xl shadow-2xl"
                   />
