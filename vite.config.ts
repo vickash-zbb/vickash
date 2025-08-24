@@ -5,6 +5,9 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
+  // 👇 IMPORTANT: add base path for GitHub Pages
+  base: "/vickash/",
+
   server: {
     host: "::",
     port: 8080,
@@ -13,16 +16,20 @@ export default defineConfig(({ mode }) => ({
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],
     },
   },
+
   build: {
     outDir: "dist/spa",
   },
+
   plugins: [react(), expressPlugin()],
+
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./client"),
       "@shared": path.resolve(__dirname, "./shared"),
     },
   },
+
   optimizeDeps: {
     include: ["lucide-react"],
   },
