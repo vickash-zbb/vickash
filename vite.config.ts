@@ -5,7 +5,7 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // 👇 IMPORTANT: add base path for GitHub Pages
+  // 👇 IMPORTANT: base must match your GitHub repo name
   base: "/vickash/",
 
   server: {
@@ -18,7 +18,9 @@ export default defineConfig(({ mode }) => ({
   },
 
   build: {
-    outDir: "dist/spa",
+    // GitHub Pages needs a `dist/` folder (default). 
+    // If you want a subfolder, that’s fine, but remember to deploy that.
+    outDir: "dist",
   },
 
   plugins: [react(), expressPlugin()],
@@ -38,7 +40,7 @@ export default defineConfig(({ mode }) => ({
 function expressPlugin(): Plugin {
   return {
     name: "express-plugin",
-    apply: "serve", // Only apply during development (serve mode)
+    apply: "serve", // Only apply during dev
     configureServer(server) {
       const app = createServer();
 
