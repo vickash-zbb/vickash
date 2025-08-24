@@ -1,0 +1,58 @@
+name: Deploy Vite React to GitHub Pages
+
+on:
+  push:
+    branches: [main]   # ← change if your default branch is different
+  workflow_dispatch:   # allows manual runs
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Build
+        run: npm run build
+
+      # SPA fallback so client-side routes don't 404 on refresh
+      - name: Add 404 fallback
+        run: cp dist/index.html dist/404.html
+
+      # If you use a custom domain, uncomment and set it:
+      # - name: Add CNAME
+      #   run: echo "yourdomain.com" > dist/CNAME
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
