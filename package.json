@@ -1,5 +1,5 @@
 {
-  "homepage": "https://vickash-zbb.github.io/vickash",
+  "homepage": "https://vickash-zbb.github.io/vickash/",
   "name": "fusion-starter",
   "private": true,
   "type": "module",
@@ -21,7 +21,7 @@
     "format.fix": "prettier --write .",
     "typecheck": "tsc",
     "predeploy": "npm run build",
-    "deploy": "gh-page -d build"
+    "deploy": "gh-pages -d dist/spa"
   },
   "dependencies": {
     "dotenv": "^17.2.1",
