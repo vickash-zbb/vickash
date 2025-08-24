@@ -283,7 +283,7 @@ export default function About() {
               <div className="relative">
                 <div className="w-full max-w-md mx-auto">
                   <img 
-                    src="client/asset/vickash profile.png" 
+                    src="/client/asset/vickash profile.png" 
                     alt="Vickash Shivan - UI/UX Designer" 
                     className="w-full rounded-2xl shadow-2xl"
                   />
