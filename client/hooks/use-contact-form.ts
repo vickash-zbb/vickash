@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { z } from "zod";
+import { apiPost } from "@/lib/api";
 
 const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -82,18 +83,8 @@ export function useContactForm() {
     setFormState(prev => ({ ...prev, isSubmitting: true, isError: false, errorMessage: "" }));
 
     try {
-      // Simulate API call - replace with actual endpoint
-      const response = await fetch('/api/contact', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
-
-      if (!response.ok) {
-        throw new Error('Failed to send message');
-      }
+      // Make API call using utility function
+      await apiPost('contact', formData);
 
       setFormState(prev => ({ 
         ...prev, 

@@ -38,7 +38,7 @@ export default function Contact() {
       title: "Email",
       subtitle: "Get in touch via email",
       description: "Perfect for detailed project discussions and file sharing",
-      contact: "vickash.shivan@email.com",
+      contact: "vickashshivan.designer@gmail.com",
       responseTime: "Within 6 hours",
       bestFor: ["Project inquiries", "Detailed requirements", "File sharing", "Follow-ups"]
     },
@@ -68,7 +68,7 @@ export default function Contact() {
       title: "LinkedIn",
       subtitle: "Connect professionally",
       description: "Great for networking and professional discussions",
-      contact: "linkedin.com/in/vickash-shivan",
+      contact: "linkedin.com/in/vickash-shivan-415139267",
       responseTime: "Within 24 hours",
       bestFor: ["Professional networking", "Industry discussions", "Recommendations", "Career opportunities"]
     }
@@ -329,7 +329,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <div className="font-medium">Email</div>
-                        <div className="text-sm text-muted-foreground">vickash.shivan@email.com</div>
+                        <div className="text-sm text-muted-foreground">vickashshivan.designer@gmail.com</div>
                       </div>
                     </div>
                     
