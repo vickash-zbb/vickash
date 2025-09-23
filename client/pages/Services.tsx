@@ -1,306 +1,295 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import { Card, CardContent } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
-import { 
-  Palette, 
-  Users, 
-  Code, 
+import {
+  Palette,
+  Users,
+  Code,
   Target,
   Search,
-  BarChart,
-  Smartphone,
-  Globe,
-  Eye,
-  Clock,
   CheckCircle,
   ArrowRight,
   Calendar,
-  DollarSign,
   Zap,
   Star,
   MessageSquare,
   FileText,
-  Settings,
-  Lightbulb
+  Lightbulb,
+  Eye,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 import Layout from "@/components/Layout";
 import ContactForm from "@/components/ContactForm";
 
-export default function Services() {
-  const [selectedPackage, setSelectedPackage] = useState<string | null>(null);
+// It's highly recommended to use a library like React Helmet to manage page titles and meta descriptions for SEO.
+// Example:
+// <Helmet>
+//   <title>Services | Vickash Shivan | Product Designer</title>
+//   <meta name="description" content="Discover the design services offered by Vickash Shivan, including UI/UX design, user research, and design systems. Let's build something amazing together." />
+// </Helmet>
 
+/*
+JSON-LD for SEO. This is an example and should be dynamically generated based on the service.
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "serviceType": "UI/UX Design",
+  "provider": {
+    "@type": "Person",
+    "name": "Vickash Shivan"
+  },
+  "description": "Transform your ideas into beautiful, functional designs that users love. I focus on creating intuitive interfaces that balance aesthetics with usability, ensuring your product not only looks great but also provides an exceptional user experience."
+}
+</script>
+*/
+
+export default function Services() {
   const services = [
     {
       id: "ui-ux-design",
       icon: Palette,
       title: "UI/UX Design",
-      shortDescription: "Complete user interface and experience design solutions",
-      description: "Transform your ideas into beautiful, functional designs that users love. I focus on creating intuitive interfaces that balance aesthetics with usability, ensuring your product not only looks great but also provides an exceptional user experience.",
+      shortDescription: "Crafting intuitive and beautiful digital experiences.",
+      description:
+        "I transform your ideas into beautiful, functional, and user-friendly designs. My focus is on creating intuitive interfaces that not only look stunning but also provide an exceptional user experience that drives engagement and retention.",
       features: [
-        "User interface design",
-        "User experience optimization",
-        "Wireframing and prototyping",
-        "Visual design and branding",
-        "Design system creation",
-        "Responsive design",
-        "Accessibility compliance"
+        "User Interface (UI) Design",
+        "User Experience (UX) Design",
+        "Wireframing & Prototyping",
+        "Visual Design & Branding",
+        "Responsive & Mobile-First Design",
+        "Accessibility (WCAG) Compliance",
       ],
       process: [
         "Discovery & Research",
         "User Journey Mapping",
-        "Wireframing",
+        "Wireframing & Prototyping",
         "Visual Design",
-        "Prototyping",
-        "Testing & Iteration"
+        "Testing & Iteration",
+        "Developer Handoff",
       ],
       deliverables: [
-        "High-fidelity mockups",
-        "Interactive prototypes",
-        "Design specifications",
-        "Asset exports",
-        "Style guide"
+        "High-Fidelity Mockups",
+        "Interactive Prototypes",
+        "Comprehensive Style Guide",
+        "Design Specifications",
+        "All Necessary Assets",
       ],
-     
     },
     {
       id: "user-research",
       icon: Search,
       title: "User Research",
-      shortDescription: "In-depth user research to inform design decisions",
-      description: "Understand your users through comprehensive research methodologies. I conduct user interviews, surveys, usability testing, and competitive analysis to provide actionable insights that drive design decisions and improve user satisfaction.",
+      shortDescription:
+        "Uncovering deep insights to inform your product strategy.",
+      description:
+        "I help you understand your users on a deeper level through comprehensive research. I conduct user interviews, surveys, and usability testing to provide you with actionable insights that drive design decisions and improve user satisfaction.",
       features: [
-        "User interviews",
-        "Surveys and questionnaires",
-        "Usability testing",
-        "Competitive analysis",
-        "Persona development",
-        "Journey mapping",
-        "Analytics review"
+        "User Interviews & Surveys",
+        "Usability Testing",
+        "Competitive Analysis",
+        "Persona Development",
+        "User Journey Mapping",
+        "Data Analysis & Insights",
       ],
       process: [
         "Research Planning",
+        "Participant Recruitment",
         "Data Collection",
-        "User Interviews",
         "Analysis & Synthesis",
-        "Insights Documentation",
-        "Recommendations"
+        "Insight Generation",
+        "Actionable Recommendations",
       ],
       deliverables: [
-        "Research report",
-        "User personas",
-        "Journey maps",
-        "Usability findings",
-        "Recommendations"
+        "Detailed Research Report",
+        "User Personas",
+        "Journey Maps",
+        "Usability Findings",
+        "Strategic Recommendations",
       ],
-   
     },
     {
       id: "design-systems",
       icon: Code,
       title: "Design Systems",
-      shortDescription: "Scalable design systems for consistent user experiences",
-      description: "Build scalable, maintainable design systems that ensure consistency across your entire product ecosystem. I create comprehensive component libraries, style guides, and documentation that empower teams to work efficiently.",
+      shortDescription:
+        "Building scalable design systems for brand consistency.",
+      description:
+        "I create scalable and maintainable design systems that ensure consistency across your entire product ecosystem. I develop comprehensive component libraries, style guides, and documentation that empower your team to build better products, faster.",
       features: [
-        "Component library creation",
-        "Design tokens",
-        "Style guide documentation",
-        "Pattern library",
-        "Accessibility guidelines",
-        "Implementation support",
-        "Team training"
+        "Component Library Development",
+        "Design Token Implementation",
+        "Comprehensive Style Guides",
+        "Pattern & Asset Libraries",
+        "Accessibility Guidelines",
+        "Implementation Support & Training",
       ],
       process: [
-        "Audit & Analysis",
-        "Component Design",
-        "Token Definition",
-        "Documentation",
-        "Implementation",
-        "Team Training"
+        "Design Audit & Analysis",
+        "Component & Token Design",
+        "Documentation & Guidelines",
+        "Implementation & Integration",
+        "Team Training & Onboarding",
+        "Ongoing Maintenance",
       ],
       deliverables: [
-        "Component library",
-        "Design tokens",
-        "Style guide",
-        "Documentation site",
-        "Implementation guide"
+        "Complete Component Library",
+        "Design Tokens",
+        "Interactive Style Guide",
+        "Comprehensive Documentation",
+        "Implementation Guide",
       ],
-      timeline: "4-12 weeks",
-      startingPrice: "$4,500"
     },
     {
       id: "usability-testing",
       icon: Target,
       title: "Usability Testing",
-      shortDescription: "Validate designs through comprehensive user testing",
-      description: "Optimize your product's usability through systematic testing and analysis. I design and conduct usability tests, analyze user behavior, and provide actionable recommendations to improve user experience and achieve business goals.",
+      shortDescription: "Validating your designs with real users.",
+      description:
+        "I help you optimize your product's usability through systematic testing and analysis. I design and conduct usability tests, analyze user behavior, and provide you with actionable recommendations to improve the user experience and achieve your business goals.",
       features: [
-        "Test planning and design",
-        "Moderated user testing",
-        "Unmoderated testing",
-        "A/B testing setup",
-        "Analytics analysis",
-        "Heuristic evaluation",
-        "Performance metrics"
+        "Test Planning & Design",
+        "Moderated & Unmoderated Testing",
+        "A/B & Preference Testing",
+        "Heuristic Evaluation",
+        "Analytics & Data Analysis",
+        "Performance Metrics & KPIs",
       ],
       process: [
-        "Test Planning",
+        "Test Planning & Scripting",
         "Participant Recruitment",
-        "Test Execution",
-        "Data Analysis",
-        "Report Generation",
-        "Recommendations"
+        "Test Execution & Moderation",
+        "Data Analysis & Synthesis",
+        "Findings & Recommendations Report",
+        "Presentation of Results",
       ],
       deliverables: [
-        "Test plan",
-        "Testing results",
-        "Video recordings",
-        "Analysis report",
-        "Improvement roadmap"
+        "Detailed Test Plan",
+        "Video Recordings of Sessions",
+        "Comprehensive Analysis Report",
+        "Actionable Recommendations",
+        "Prioritized Improvement Roadmap",
       ],
-      timeline: "1-3 weeks",
-      startingPrice: "$1,500"
-    }
+    },
   ];
 
   const packages = [
     {
       id: "starter",
       name: "Starter",
-      description: "Perfect for small projects and startups",
+      description: "Ideal for small projects and startups.",
       price: "$2,500",
       duration: "2-4 weeks",
       features: [
-        "UI/UX design for 5-10 screens",
+        "UI/UX design for up to 10 screens",
         "Basic user research",
-        "2 design revisions",
-        "Design system basics",
+        "2 rounds of revisions",
+        "Core design system elements",
         "Mobile responsive design",
-        "Design handoff assets"
+        "Developer handoff assets",
       ],
       popular: false,
-      cta: "Get Started"
+      cta: "Get Started",
     },
     {
       id: "professional",
       name: "Professional",
-      description: "Comprehensive design solution for growing businesses",
+      description: "A comprehensive solution for growing businesses.",
       price: "$5,500",
       duration: "4-8 weeks",
       features: [
-        "UI/UX design for 15-25 screens",
-        "Comprehensive user research",
+        "UI/UX design for up to 25 screens",
+        "In-depth user research",
         "User personas & journey maps",
-        "3 design revisions",
+        "3 rounds of revisions",
         "Complete design system",
-        "Usability testing",
+        "Usability testing session",
         "Mobile & desktop design",
-        "Developer handoff support"
+        "Developer handoff support",
       ],
       popular: true,
-      cta: "Most Popular"
+      cta: "Choose Professional",
     },
     {
       id: "enterprise",
       name: "Enterprise",
-      description: "Full-scale design transformation for large organizations",
-      price: "$12,500",
-      duration: "8-16 weeks",
+      description: "A full-scale design partnership for large organizations.",
+      price: "Custom",
+      duration: "Ongoing",
       features: [
-        "UI/UX design for 30+ screens",
-        "Extensive user research",
-        "Multiple user personas",
-        "Unlimited revisions",
-        "Advanced design system",
-        "Comprehensive testing",
-        "Multi-platform design",
+        "Unlimited screen design",
+        "Continuous user research",
+        "Multiple user personas & flows",
+        "Unlimited revisions & iterations",
+        "Advanced, scalable design system",
+        "Comprehensive usability testing",
+        "Multi-platform design strategy",
         "Team training & workshops",
-        "Ongoing support (3 months)"
+        "Dedicated ongoing support",
       ],
       popular: false,
-      cta: "Contact for Details"
-    }
-  ];
-
-  const addOns = [
-    {
-      name: "Additional Screen Design",
-      description: "Extra screens beyond package limits",
-      price: "$150-300 per screen"
+      cta: "Contact for a Quote",
     },
-    {
-      name: "Animation & Micro-interactions",
-      description: "Custom animations and interactive elements",
-      price: "$500-1,500"
-    },
-    {
-      name: "Brand Identity Design",
-      description: "Logo, colors, typography, brand guidelines",
-      price: "$2,000-5,000"
-    },
-    {
-      name: "User Testing Sessions",
-      description: "Additional usability testing rounds",
-      price: "$800-1,200 per session"
-    },
-    {
-      name: "Implementation Support",
-      description: "Direct collaboration with development team",
-      price: "$150 per hour"
-    }
   ];
 
   const testimonials = [
     {
-      text: "Vickash delivered exceptional UI/UX design that transformed our user engagement. Professional, creative, and results-driven.",
+      text: "Vickash delivered an exceptional UI/UX design that transformed our user engagement. He is professional, creative, and completely results-driven.",
       author: "Sarah Johnson",
       role: "Product Manager",
       company: "TechFlow",
-      rating: 5
+      rating: 5,
     },
     {
-      text: "The design system Vickash created has been instrumental in scaling our product across multiple platforms efficiently.",
+      text: "The design system Vickash created has been instrumental in scaling our product across multiple platforms with remarkable efficiency and consistency.",
       author: "Michael Chen",
       role: "CTO",
-      company: "DataFlow Inc",
-      rating: 5
+      company: "DataFlow Inc.",
+      rating: 5,
     },
     {
-      text: "Outstanding user research insights that completely changed our product strategy. Highly recommend!",
+      text: "The user research insights Vickash provided were outstanding and completely reshaped our product strategy for the better. I can't recommend him enough!",
       author: "Emily Rodriguez",
       role: "Founder",
       company: "StartupXYZ",
-      rating: 5
-    }
+      rating: 5,
+    },
   ];
 
   const faqs = [
     {
-      question: "What's included in the discovery phase?",
-      answer: "The discovery phase includes stakeholder interviews, competitor analysis, user research, goal definition, and project planning. This ensures we align on objectives and create a solid foundation for the design process."
+      question: "What is your design process like?",
+      answer:
+        "My design process is collaborative and iterative. It typically includes a discovery phase, user research, ideation and design, prototyping and testing, and finally, developer handoff and support. I tailor the process to fit the specific needs of each project.",
     },
     {
-      question: "How many revisions are included?",
-      answer: "The number of revisions depends on your package. Starter includes 2 major revisions, Professional includes 3, and Enterprise includes unlimited revisions. Minor adjustments are always included."
+      question: "How many revisions are included in a project?",
+      answer:
+        "The number of revisions depends on the package you choose. The Starter package includes 2 major revisions, the Professional package includes 3, and the Enterprise package includes unlimited revisions. I always ensure we have plenty of opportunities for feedback and iteration.",
     },
     {
       question: "Do you work with development teams?",
-      answer: "Absolutely! I provide detailed design specifications, assets, and can collaborate directly with your development team to ensure pixel-perfect implementation. Implementation support is available as an add-on."
+      answer:
+        "Absolutely. I provide detailed design specifications, assets, and prototypes to ensure a smooth handoff to your development team. I'm also happy to collaborate directly with them to ensure a pixel-perfect implementation.",
     },
     {
-      question: "What tools do you use?",
-      answer: "I primarily use Figma for design work, along with various research and prototyping tools like Maze, Optimal Workshop, and Principle depending on project needs."
+      question: "What tools do you use for your design work?",
+      answer:
+        "I primarily use Figma for all my design and prototyping work. I also use a variety of other tools for research, testing, and project management, including Maze, Optimal Workshop, and Notion.",
     },
     {
-      question: "Can you work within our existing brand guidelines?",
-      answer: "Yes, I can work within your existing brand guidelines or help evolve them as needed. I'm experienced in both following established design systems and creating new ones."
+      question: "Can you work with our existing brand guidelines?",
+      answer:
+        "Yes, I can seamlessly integrate with your existing brand guidelines to ensure consistency. I can also help you evolve and improve your brand identity if needed.",
     },
     {
-      question: "What's your typical project timeline?",
-      answer: "Project timelines vary based on scope and complexity. Typical ranges are: Starter (2-4 weeks), Professional (4-8 weeks), Enterprise (8-16 weeks). Rush projects may be accommodated with priority pricing."
-    }
+      question: "What are your payment terms?",
+      answer:
+        "I typically require a 50% deposit to begin a project, with the remaining 50% due upon completion. I'm also open to discussing other payment structures for larger or ongoing projects.",
+    },
   ];
 
   return (
@@ -309,68 +298,51 @@ export default function Services() {
       <section className="pt-32 pb-20 bg-gradient-to-br from-primary-50 via-background to-primary-50/50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-slide-up">
-            <Badge variant="outline" className="mb-6 text-primary border-primary/20 bg-primary/5">
+            <Badge
+              variant="outline"
+              className="mb-6 text-primary border-primary/20 bg-primary/5"
+            >
               <Zap className="w-4 h-4 mr-2" />
-              Services
+              My Services
             </Badge>
-            
+
             <h1 className="text-4xl md:text-6xl font-display font-bold mb-6 leading-tight">
-              <span className="text-foreground">Design Services That</span>
+              <span className="text-foreground">Design Services to</span>
               <br />
               <span className="bg-gradient-to-r from-primary-500 to-primary-700 bg-clip-text text-transparent">
-                Drive Results
+                Elevate Your Business
               </span>
             </h1>
-            
+
             <p className="text-lg md:text-xl text-muted-foreground mb-12 max-w-3xl mx-auto leading-relaxed">
-              From initial concept to final implementation, I provide comprehensive design 
-              services that transform your ideas into exceptional user experiences that 
-              users love and businesses value.
+              From initial concept to final implementation, I provide a complete
+              suite of design services that will transform your ideas into
+              exceptional user experiences that your customers will love.
             </p>
-            
+
             <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
-              <Button 
+              <Button
                 size="lg"
                 className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 shadow-lg"
                 asChild
               >
-                <a href="#packages">View Packages</a>
+                <a href="#packages">Explore Packages</a>
               </Button>
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button 
-                    variant="outline" 
+                  <Button
+                    variant="outline"
                     size="lg"
                     className="border-primary/20 hover:border-primary hover:bg-primary/5"
                   >
                     <MessageSquare className="mr-2 w-4 h-4" />
-                    Free Consultation
+                    Book a Free Consultation
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl">
                   <ContactForm variant="compact" />
                 </DialogContent>
               </Dialog>
-            </div>
-            
-            {/* Stats */}
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
-              <div className="animate-scale-in">
-                <div className="text-3xl font-bold text-primary">50+</div>
-                <div className="text-sm text-muted-foreground">Projects Completed</div>
-              </div>
-              <div className="animate-scale-in" style={{ animationDelay: "0.1s" }}>
-                <div className="text-3xl font-bold text-primary">20+</div>
-                <div className="text-sm text-muted-foreground">Happy Clients</div>
-              </div>
-              <div className="animate-scale-in" style={{ animationDelay: "0.2s" }}>
-                <div className="text-3xl font-bold text-primary">4.9★</div>
-                <div className="text-sm text-muted-foreground">Average Rating</div>
-              </div>
-              <div className="animate-scale-in" style={{ animationDelay: "0.3s" }}>
-                <div className="text-3xl font-bold text-primary">40%</div>
-                <div className="text-sm text-muted-foreground">Avg UX Improvement</div>
-              </div>
             </div>
           </div>
         </div>
@@ -381,18 +353,19 @@ export default function Services() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              What I <span className="text-primary">Offer</span>
+              What I <span className="text-primary">Can Do For You</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Comprehensive design services covering every aspect of the user experience, 
-              from research and strategy to implementation and optimization.
+              I offer a range of design services to cover every aspect of the
+              user experience, from initial research and strategy to final
+              implementation and optimization.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             {services.map((service, index) => (
-              <Card 
-                key={service.id} 
+              <Card
+                key={service.id}
                 className="p-8 hover:shadow-xl transition-all duration-300 animate-scale-in"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -400,24 +373,20 @@ export default function Services() {
                   <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center mb-6">
                     <service.icon className="w-6 h-6 text-white" />
                   </div>
-                  
-                  <h3 className="text-xl font-semibold mb-3">{service.title}</h3>
-                  <p className="text-muted-foreground mb-6">{service.shortDescription}</p>
-                  
-                  {/* <div className="space-y-4 mb-6">
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">Starting from</span>
-                      <span className="font-semibold text-lg text-primary">{service.startingPrice}</span>
-                    </div>
-                    <div className="flex justify-between items-center text-sm">
-                      <span className="text-muted-foreground">Timeline</span>
-                      <span className="font-medium">{service.timeline}</span>
-                    </div>
-                  </div> */}
-                  
+
+                  <h3 className="text-xl font-semibold mb-3">
+                    {service.title}
+                  </h3>
+                  <p className="text-muted-foreground mb-6">
+                    {service.shortDescription}
+                  </p>
+
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button variant="outline" className="w-full hover:bg-primary hover:text-white hover:border-primary transition-all">
+                      <Button
+                        variant="outline"
+                        className="w-full hover:bg-primary hover:text-white hover:border-primary transition-all"
+                      >
                         Learn More
                         <ArrowRight className="ml-2 w-4 h-4" />
                       </Button>
@@ -433,26 +402,27 @@ export default function Services() {
         </div>
       </section>
 
-      {/* Packages Section
-      <section id="packages" className="py-20 bg-neutral-50">
+      {/* Packages Section */}
+      {/* <section id="packages" className="py-20 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Choose Your <span className="text-primary">Package</span>
+              Flexible Packages for{" "}
+              <span className="text-primary">Every Need</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              Flexible packages designed to meet different project needs and budgets. 
-              All packages include my signature attention to detail and commitment to excellence.
+              I offer a range of flexible packages designed to meet your
+              specific project needs and budget. Every package includes my
+              signature attention to detail and unwavering commitment to
+              excellence.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {packages.map((pkg, index) => (
-              <Card 
-                key={pkg.id} 
-                className={`relative p-8 hover:shadow-xl transition-all duration-300 animate-scale-in ${
-                  pkg.popular ? 'ring-2 ring-primary shadow-lg scale-105' : ''
-                }`}
+              <Card
+                key={pkg.id}
+                className={`relative p-8 hover:shadow-xl transition-all duration-300 animate-scale-in ${pkg.popular ? "ring-2 ring-primary shadow-lg scale-105" : ""}`}
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {pkg.popular && (
@@ -460,15 +430,21 @@ export default function Services() {
                     Most Popular
                   </Badge>
                 )}
-                
+
                 <CardContent className="p-0">
                   <div className="text-center mb-6">
                     <h3 className="text-2xl font-bold mb-2">{pkg.name}</h3>
-                    <p className="text-muted-foreground mb-4">{pkg.description}</p>
-                    <div className="text-4xl font-bold text-primary mb-2">{pkg.price}</div>
-                    <div className="text-sm text-muted-foreground">{pkg.duration}</div>
+                    <p className="text-muted-foreground mb-4">
+                      {pkg.description}
+                    </p>
+                    <div className="text-4xl font-bold text-primary mb-2">
+                      {pkg.price}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {pkg.duration}
+                    </div>
                   </div>
-                  
+
                   <ul className="space-y-3 mb-8">
                     {pkg.features.map((feature, idx) => (
                       <li key={idx} className="flex items-start gap-3">
@@ -477,25 +453,25 @@ export default function Services() {
                       </li>
                     ))}
                   </ul>
-                  
+
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Button 
-                        className={`w-full ${
-                          pkg.popular 
-                            ? 'bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700' 
-                            : ''
-                        }`}
-                        variant={pkg.popular ? 'default' : 'outline'}
+                      <Button
+                        className={`w-full ${pkg.popular ? "bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700" : ""}`}
+                        variant={pkg.popular ? "default" : "outline"}
                       >
                         {pkg.cta}
                       </Button>
                     </DialogTrigger>
                     <DialogContent className="max-w-2xl">
                       <div className="space-y-4">
-                        <h3 className="text-xl font-semibold">Get Started with {pkg.name}</h3>
+                        <h3 className="text-xl font-semibold">
+                          Get Started with the {pkg.name} Package
+                        </h3>
                         <p className="text-muted-foreground">
-                          Ready to begin your project? Fill out the form below and I'll get back to you within 24 hours.
+                          Ready to begin your project? Fill out the form below
+                          and I'll get back to you within 24 hours to discuss
+                          the next steps.
                         </p>
                         <ContactForm variant="compact" />
                       </div>
@@ -505,82 +481,109 @@ export default function Services() {
               </Card>
             ))}
           </div>
-          
-          {/* Add-ons */}
-          {/* <div className="mt-16">
-            <h3 className="text-2xl font-bold text-center mb-8">
-              Add-On <span className="text-primary">Services</span>
-            </h3>
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-              {addOns.map((addon, index) => (
-                <Card key={addon.name} className="p-6 animate-scale-in" style={{ animationDelay: `${index * 0.05}s` }}>
-      //             <CardContent className="p-0">
-      //               <h4 className="font-semibold mb-2">{addon.name}</h4>
-      //               <p className="text-sm text-muted-foreground mb-3">{addon.description}</p>
-      //               <div className="text-sm font-medium text-primary">{addon.price}</div>
-      //             </CardContent>
-      //           </Card> */}
-      {/* //         ))} */}
-      {/* //       </div> */}
-      {/* //     </div> */}
-      {/* //   </div> */}
-      {/* // </section> */}
+        </div>
+      </section> */}
 
       {/* Process Section */}
-      <section className="py-20">
+      {/* <section className="py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              My Design <span className="text-primary">Process</span>
+              My Proven Design <span className="text-primary">Process</span>
             </h2>
             <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              A proven methodology that ensures exceptional results through 
-              systematic approach, collaboration, and continuous iteration.
+              I follow a proven and systematic methodology to ensure that every
+              project I work on is a success. My process is built on
+              collaboration, transparency, and a relentless focus on quality.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-6 gap-6">
             {[
-              { icon: Search, title: "Discovery", description: "Understanding goals and requirements" },
-              { icon: Users, title: "Research", description: "User interviews and analysis" },
-              { icon: FileText, title: "Strategy", description: "Information architecture and planning" },
-              { icon: Palette, title: "Design", description: "Visual design and prototyping" },
-              { icon: Eye, title: "Testing", description: "Usability testing and validation" },
-              { icon: Code, title: "Handoff", description: "Implementation support and delivery" }
+              {
+                icon: Search,
+                title: "1. Discovery",
+                description:
+                  "We start by understanding your business, your goals, and your users.",
+              },
+              {
+                icon: Users,
+                title: "2. Research",
+                description:
+                  "I conduct in-depth research to understand your users' needs, behaviors, and pain points.",
+              },
+              {
+                icon: FileText,
+                title: "3. Strategy",
+                description:
+                  "I develop a clear strategy and roadmap for the project, including information architecture and user flows.",
+              },
+              {
+                icon: Palette,
+                title: "4. Design",
+                description:
+                  "I create stunning visual designs and interactive prototypes that bring your ideas to life.",
+              },
+              {
+                icon: Eye,
+                title: "5. Testing",
+                description:
+                  "I validate my designs with real users to ensure they are intuitive, effective, and enjoyable to use.",
+              },
+              {
+                icon: Code,
+                title: "6. Handoff",
+                description:
+                  "I provide your development team with everything they need for a smooth and efficient implementation.",
+              },
             ].map((step, index) => (
-              <Card key={step.title} className="p-6 text-center animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card
+                key={step.title}
+                className="p-6 text-center animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-0">
                   <div className="w-12 h-12 bg-primary-100 rounded-xl flex items-center justify-center mx-auto mb-4">
                     <step.icon className="w-6 h-6 text-primary" />
                   </div>
                   <h3 className="font-semibold mb-2">{step.title}</h3>
-                  <p className="text-sm text-muted-foreground">{step.description}</p>
+                  <p className="text-sm text-muted-foreground">
+                    {step.description}
+                  </p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials */}
       {/* <section className="py-20 bg-neutral-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Client <span className="text-primary">Success Stories</span>
+              What My <span className="text-primary">Clients Say</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              What clients say about working with me and the results we achieved together.
+              I'm proud to have worked with some amazing clients. Here's what
+              they have to say about our collaboration.
             </p>
           </div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {testimonials.map((testimonial, index) => (
-              <Card key={testimonial.author} className="p-6 animate-scale-in" style={{ animationDelay: `${index * 0.1}s` }}>
+              <Card
+                key={testimonial.author}
+                className="p-6 animate-scale-in"
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
                 <CardContent className="p-0">
                   <div className="flex mb-4">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                      <Star
+                        key={i}
+                        className="w-4 h-4 fill-yellow-400 text-yellow-400"
+                      />
                     ))}
                   </div>
                   <blockquote className="text-muted-foreground italic mb-4">
@@ -600,20 +603,26 @@ export default function Services() {
       </section> */}
 
       {/* FAQ Section */}
-      {/* <section className="py-20">
+      <section className="py-20">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16 animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
               Frequently Asked <span className="text-primary">Questions</span>
             </h2>
             <p className="text-lg text-muted-foreground">
-              Common questions about my services, process, and working together.
+              Here are answers to some of the most common questions I receive.
+              If you have any other questions, please don't hesitate to get in
+              touch.
             </p>
           </div>
-          
+
           <div className="space-y-6">
             {faqs.map((faq, index) => (
-              <Card key={faq.question} className="p-6 animate-slide-up" style={{ animationDelay: `${index * 0.05}s` }}>
+              <Card
+                key={faq.question}
+                className="p-6 animate-slide-up"
+                style={{ animationDelay: `${index * 0.05}s` }}
+              >
                 <CardContent className="p-0">
                   <h3 className="font-semibold mb-3">{faq.question}</h3>
                   <p className="text-muted-foreground">{faq.answer}</p>
@@ -622,41 +631,43 @@ export default function Services() {
             ))}
           </div>
         </div>
-      </section> */}
+      </section>
 
       {/* CTA Section */}
       <section className="py-20 bg-gradient-to-br from-primary-50 via-background to-primary-50/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <div className="animate-slide-up">
             <h2 className="text-3xl md:text-4xl font-display font-bold mb-6">
-              Ready to Start Your <span className="text-primary">Project?</span>
+              Ready to Build Something{" "}
+              <span className="text-primary">Amazing?</span>
             </h2>
             <p className="text-lg text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Let's discuss your project goals and how I can help you create 
-              exceptional user experiences that drive business results.
+              I'm currently available for new projects and would love to hear
+              about yours. Let's discuss how I can help you create an
+              exceptional digital experience that drives results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Dialog>
                 <DialogTrigger asChild>
-                  <Button 
+                  <Button
                     size="lg"
                     className="bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 shadow-lg"
                   >
                     <Calendar className="mr-2 w-4 h-4" />
-                    Schedule Consultation
+                    Schedule a Free Consultation
                   </Button>
                 </DialogTrigger>
                 <DialogContent className="max-w-2xl">
                   <ContactForm />
                 </DialogContent>
               </Dialog>
-              <Button 
-                variant="outline" 
+              <Button
+                variant="outline"
                 size="lg"
                 className="border-primary/20 hover:border-primary hover:bg-primary/5"
                 asChild
               >
-                <a href="/portfolio">View My Work</a>
+                <Link to="/portfolio">See My Work</Link>
               </Button>
             </div>
           </div>
@@ -666,20 +677,17 @@ export default function Services() {
   );
 }
 
-// Service Modal Component
 function ServiceModal({ service }: { service: any }) {
   return (
-    <div className="space-y-6">
-      <div>
-        <div className="flex items-center gap-3 mb-4">
-          <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center">
-            <service.icon className="w-6 h-6 text-white" />
-          </div>
-          <h2 className="text-2xl font-bold">{service.title}</h2>
+    <div className="space-y-6 p-2">
+      <div className="flex items-center gap-3 mb-4">
+        <div className="w-12 h-12 bg-gradient-to-br from-primary-400 to-primary-600 rounded-xl flex items-center justify-center">
+          <service.icon className="w-6 h-6 text-white" />
         </div>
-        <p className="text-muted-foreground">{service.description}</p>
+        <h2 className="text-2xl font-bold">{service.title}</h2>
       </div>
-      
+      <p className="text-muted-foreground">{service.description}</p>
+
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <div>
           <h3 className="font-semibold mb-3">What's Included</h3>
@@ -692,9 +700,9 @@ function ServiceModal({ service }: { service: any }) {
             ))}
           </ul>
         </div>
-        
+
         <div>
-          <h3 className="font-semibold mb-3">Process Overview</h3>
+          <h3 className="font-semibold mb-3">My Process</h3>
           <ol className="space-y-2">
             {service.process.map((step: string, index: number) => (
               <li key={index} className="flex items-center gap-3">
@@ -707,9 +715,9 @@ function ServiceModal({ service }: { service: any }) {
           </ol>
         </div>
       </div>
-      
+
       <div>
-        <h3 className="font-semibold mb-3">Deliverables</h3>
+        <h3 className="font-semibold mb-3">Key Deliverables</h3>
         <div className="flex flex-wrap gap-2">
           {service.deliverables.map((deliverable: string) => (
             <Badge key={deliverable} variant="secondary">
@@ -718,18 +726,7 @@ function ServiceModal({ service }: { service: any }) {
           ))}
         </div>
       </div>
-      
-      <div className="flex items-center justify-between p-4 bg-neutral-50 rounded-lg">
-        <div>
-          <div className="text-sm text-muted-foreground">Starting from</div>
-          <div className="text-2xl font-bold text-primary">{service.startingPrice}</div>
-        </div>
-        <div>
-          <div className="text-sm text-muted-foreground">Timeline</div>
-          <div className="text-lg font-semibold">{service.timeline}</div>
-        </div>
-      </div>
-      
+
       <Dialog>
         <DialogTrigger asChild>
           <Button className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700">
