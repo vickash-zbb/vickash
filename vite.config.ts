@@ -5,12 +5,12 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // 👇 IMPORTANT: base must match your GitHub repo name
-  base: "/vickash/",
+  // 👇 IMPORTANT: base must match your GitHub repo name for production
+  base: mode === "production" ? "/vickash/" : "/",
 
   server: {
     host: "::",
-    port: 8080,
+    port: 8081,
     fs: {
       allow: ["./client", "./shared", "./node_modules"],
       deny: [".env", ".env.*", "*.{crt,pem}", "**/.git/**", "server/**"],

@@ -62,8 +62,8 @@ export default function Portfolio() {
       year: "2024",
       duration: "8 weeks",
       team: "4 members",
-      image: "/placeholder.svg",
-      thumbnail: "/placeholder.svg",
+      image: "/tharunam.png",
+      thumbnail: "/tharunam.png",
       description:
         "Complete mobile shopping experience redesign that increased conversion rates by 45% and improved user satisfaction scores.",
       challenge:
@@ -98,8 +98,8 @@ export default function Portfolio() {
       year: "2024",
       duration: "12 weeks",
       team: "6 members",
-      image: "/placeholder.svg",
-      thumbnail: "/placeholder.svg",
+      image: "/leadstitch.png",
+      thumbnail: "/leadstitch.png",
       description:
         "Modern dashboard interface for data analytics platform with improved user flow and data visualization.",
       challenge:
@@ -134,8 +134,8 @@ export default function Portfolio() {
       year: "2024",
       duration: "6 weeks",
       team: "3 members",
-      image: "/placeholder.svg",
-      thumbnail: "/placeholder.svg",
+      image: "/timesmart.png",
+      thumbnail: "/timesmart.png",
       description:
         "Complete brand identity including logo, color palette, typography, and comprehensive design guidelines.",
       challenge:
@@ -170,8 +170,8 @@ export default function Portfolio() {
       year: "2023",
       duration: "16 weeks",
       team: "8 members",
-      image: "/placeholder.svg",
-      thumbnail: "/placeholder.svg",
+      image: "/nandhuvino.png",
+      thumbnail: "/nandhuvino.png",
       description:
         "Patient-centric portal design focusing on accessibility, ease of use, and secure health information management.",
       challenge:
@@ -206,8 +206,8 @@ export default function Portfolio() {
       year: "2023",
       duration: "20 weeks",
       team: "10 members",
-      image: "/placeholder.svg",
-      thumbnail: "/placeholder.svg",
+      image: "/solarprospects.png",
+      thumbnail: "/solarprospects.png",
       description:
         "Modern mobile banking experience with advanced security features and intuitive financial management tools.",
       challenge:
@@ -242,8 +242,8 @@ export default function Portfolio() {
       year: "2023",
       duration: "24 weeks",
       team: "12 members",
-      image: "/placeholder.svg",
-      thumbnail: "/placeholder.svg",
+      image: "/sai_20krisshna.png",
+      thumbnail: "/sai_20krisshna.png",
       description:
         "Comprehensive design system with reusable components, clear documentation, and implementation guidelines.",
       challenge:
