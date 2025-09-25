@@ -12,8 +12,18 @@ interface ContactFormProps {
   variant?: "default" | "compact";
 }
 
-export default function ContactForm({ className, variant = "default" }: ContactFormProps) {
-  const { formData, formState, errors, updateField, validateField, submitForm } = useContactForm();
+export default function ContactForm({
+  className,
+  variant = "default",
+}: ContactFormProps) {
+  const {
+    formData,
+    formState,
+    errors,
+    updateField,
+    validateField,
+    submitForm,
+  } = useContactForm();
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -39,8 +49,8 @@ export default function ContactForm({ className, variant = "default" }: ContactF
           <p className="text-muted-foreground mb-6">
             Thank you for reaching out! I'll get back to you within 24 hours.
           </p>
-          <Button 
-            onClick={() => window.location.reload()} 
+          <Button
+            onClick={() => window.location.reload()}
             variant="outline"
             className="border-green-200 hover:border-green-300 hover:bg-green-50"
           >
@@ -56,9 +66,12 @@ export default function ContactForm({ className, variant = "default" }: ContactF
       <CardContent className="p-0">
         {variant === "default" && (
           <div className="mb-6">
-            <h3 className="text-2xl font-semibold mb-2">Let's Start a Conversation</h3>
+            <h3 className="text-2xl font-semibold mb-2">
+              Let's Start a Conversation
+            </h3>
             <p className="text-muted-foreground">
-              I'd love to hear about your project. Send me a message and I'll respond within 24 hours.
+              I'd love to hear about your project. Send me a message and I'll
+              respond within 24 hours.
             </p>
           </div>
         )}
@@ -78,7 +91,7 @@ export default function ContactForm({ className, variant = "default" }: ContactF
               <label className="block text-sm font-medium">
                 Name <span className="text-red-500">*</span>
               </label>
-              <Input 
+              <Input
                 name="name"
                 value={formData.name}
                 onChange={(e) => handleInputChange("name", e.target.value)}
@@ -86,7 +99,9 @@ export default function ContactForm({ className, variant = "default" }: ContactF
                 placeholder="Your full name"
                 className={cn(
                   "transition-colors",
-                  errors.name ? "border-red-300 focus:border-red-500" : "focus:border-primary"
+                  errors.name
+                    ? "border-red-300 focus:border-red-500"
+                    : "focus:border-primary",
                 )}
                 disabled={formState.isSubmitting}
               />
@@ -94,12 +109,12 @@ export default function ContactForm({ className, variant = "default" }: ContactF
                 <p className="text-sm text-red-600">{errors.name}</p>
               )}
             </div>
-            
+
             <div className="space-y-2">
               <label className="block text-sm font-medium">
                 Email <span className="text-red-500">*</span>
               </label>
-              <Input 
+              <Input
                 name="email"
                 type="email"
                 value={formData.email}
@@ -108,7 +123,9 @@ export default function ContactForm({ className, variant = "default" }: ContactF
                 placeholder="your@email.com"
                 className={cn(
                   "transition-colors",
-                  errors.email ? "border-red-300 focus:border-red-500" : "focus:border-primary"
+                  errors.email
+                    ? "border-red-300 focus:border-red-500"
+                    : "focus:border-primary",
                 )}
                 disabled={formState.isSubmitting}
               />
@@ -117,12 +134,12 @@ export default function ContactForm({ className, variant = "default" }: ContactF
               )}
             </div>
           </div>
-          
+
           <div className="space-y-2">
             <label className="block text-sm font-medium">
               Subject <span className="text-red-500">*</span>
             </label>
-            <Input 
+            <Input
               name="subject"
               value={formData.subject}
               onChange={(e) => handleInputChange("subject", e.target.value)}
@@ -130,7 +147,9 @@ export default function ContactForm({ className, variant = "default" }: ContactF
               placeholder="What's this about?"
               className={cn(
                 "transition-colors",
-                errors.subject ? "border-red-300 focus:border-red-500" : "focus:border-primary"
+                errors.subject
+                  ? "border-red-300 focus:border-red-500"
+                  : "focus:border-primary",
               )}
               disabled={formState.isSubmitting}
             />
@@ -138,12 +157,12 @@ export default function ContactForm({ className, variant = "default" }: ContactF
               <p className="text-sm text-red-600">{errors.subject}</p>
             )}
           </div>
-          
+
           <div className="space-y-2">
             <label className="block text-sm font-medium">
               Message <span className="text-red-500">*</span>
             </label>
-            <Textarea 
+            <Textarea
               name="message"
               value={formData.message}
               onChange={(e) => handleInputChange("message", e.target.value)}
@@ -152,7 +171,9 @@ export default function ContactForm({ className, variant = "default" }: ContactF
               rows={variant === "compact" ? 4 : 5}
               className={cn(
                 "transition-colors resize-none",
-                errors.message ? "border-red-300 focus:border-red-500" : "focus:border-primary"
+                errors.message
+                  ? "border-red-300 focus:border-red-500"
+                  : "focus:border-primary",
               )}
               disabled={formState.isSubmitting}
             />
@@ -160,12 +181,12 @@ export default function ContactForm({ className, variant = "default" }: ContactF
               <p className="text-sm text-red-600">{errors.message}</p>
             )}
             <p className="text-xs text-muted-foreground">
-              {formData.message.length}/20 characters minimum
+              {formData.message.length} characters
             </p>
           </div>
-          
-          <Button 
-            type="submit" 
+
+          <Button
+            type="submit"
             disabled={formState.isSubmitting}
             className="w-full bg-gradient-to-r from-primary-500 to-primary-600 hover:from-primary-600 hover:to-primary-700 disabled:opacity-50 disabled:cursor-not-allowed"
           >
@@ -181,9 +202,10 @@ export default function ContactForm({ className, variant = "default" }: ContactF
               </>
             )}
           </Button>
-          
+
           <p className="text-xs text-muted-foreground text-center">
-            I typically respond within 24 hours. For urgent inquiries, please call directly.
+            I typically respond within 24 hours. For urgent inquiries, please
+            call directly.
           </p>
         </form>
       </CardContent>

@@ -6,7 +6,7 @@ const contactFormSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
   email: z.string().email("Please enter a valid email address"),
   subject: z.string().min(5, "Subject must be at least 5 characters"),
-  message: z.string().min(20, "Message must be at least 20 characters"),
+  message: z.string().min(1, "Message is required"),
 });
 
 // Email configuration
@@ -28,7 +28,7 @@ const createTransporter = () => {
     },
   };
 
-  return nodemailer.createTransporter(emailConfig);
+  return nodemailer.createTransport(emailConfig);
 };
 
 const sendContactEmail = async (data: z.infer<typeof contactFormSchema>, clientInfo: { ip?: string; userAgent?: string }) => {
