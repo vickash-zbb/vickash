@@ -5,8 +5,8 @@ import { createServer } from "./server";
 
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  // 👇 IMPORTANT: base must match your GitHub repo name for production
-  base: mode === "production" ? "/vickash/" : "/",
+  // 👇 IMPORTANT: base for deployment (change for different platforms)
+  base: "/",
 
   server: {
     host: "::",
